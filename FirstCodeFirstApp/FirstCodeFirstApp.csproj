@@ -55,6 +55,8 @@
     <Compile Include="Context.cs" />
     <Compile Include="Donator.cs" />
     <Compile Include="DonatorMap.cs" />
+    <Compile Include="DonatorType.cs" />
+    <Compile Include="DonatorTypeMap.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="PayWay.cs" />
     <Compile Include="Program.cs" />

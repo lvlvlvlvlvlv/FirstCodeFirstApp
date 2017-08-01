@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace FirstCodeFirstApp
 {
-    //[Table("PayWay")]
+    [Table("PayWay")]
+    public class PayWay
+    {
+        public int Id { get; set; }
+        [MaxLength(8, ErrorMessage = "支付方式的名称长度不能大于8!")]
+        public string Name { get; set; }
+
+        public int DonatorId { get; set; }
+    }
+
+
+
     //public class PayWay
     //{
     //    public int Id { get; set; }
-    //    [MaxLength(8,ErrorMessage = "支付方式的名称长度不能大于8")]
+
     //    public string Name { get; set; }
 
     //    public int MyProperty { get; set; }
     //}
-
-
-    
-    public class PayWay
-    {
-        public int Id { get; set; }
-        
-        public string Name { get; set; }
-
-        public int MyProperty { get; set; }
-    }
 }

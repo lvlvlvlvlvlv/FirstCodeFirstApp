@@ -34,6 +34,10 @@ namespace FirstCodeFirstApp
 
             modelbuilder.Configurations.Add(new DonatorMap());
 
+            modelBuilder.Configurations.Add(new DonatorTypeMap());
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
             base.OnModelCreating(modelbuilder);
         }
 

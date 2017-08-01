@@ -13,7 +13,7 @@ namespace FirstCodeFirstApp
         {
             Database.SetInitializer(new Initializer());
 
-            using (var context=new Context())
+            using (var context = new Context())
             {
 
                 context.Database.CreateIfNotExists();  //如果数据库不存在则创建
@@ -81,11 +81,28 @@ namespace FirstCodeFirstApp
                 #endregion
 
                 #region 5.0 遍历PayWays表
-                var payways = context.PayWays;
-                foreach (var payway in payways)
+
+                //var payways = context.PayWays;
+                //foreach (var payway in payways)
+                //{
+                //    Console.WriteLine("Id={0},Name={1}", payway.Id, payway.Name);
+                //}
+                #endregion
+
+                #region  6.0 一对多关系
+
+                var Donator = new Donator
                 {
-                    Console.WriteLine("Id={0},Name={1}", payway.Id, payway.Name);
-                }
+                    Amount = 6,
+                    Name = "键盘里的鼠标",
+                    DonateDate = DateTime.Parse("2017-08-01")
+                };
+                Donator.PayWays.Add(new PayWay { Name = "支付宝" });
+                Donator.PayWays.Add(new PayWay { Name = "微信支付" });
+
+                context.Donator.Add(Donator);
+                context.SaveChanges();
+
                 #endregion
 
 

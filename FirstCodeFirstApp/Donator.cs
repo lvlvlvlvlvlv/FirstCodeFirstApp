@@ -23,11 +23,24 @@ namespace FirstCodeFirstApp
    
     public class Donator
     {
-       
+
+        public Donator()
+        {
+            PayWays = new HashSet<PayWay>();
+        }
+
+
         public int DonatorId { get; set; }
        
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public DateTime DonateDate { get; set; }
+
+        public virtual ICollection<PayWay> PayWays { get; set; }
+
+
+        public int? DonatorTypeId { get; set; }
+        public virtual DonatorType DonatorType { get; set; }
+
     }
 }
