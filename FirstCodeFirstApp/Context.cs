@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,9 +35,9 @@ namespace FirstCodeFirstApp
 
             modelbuilder.Configurations.Add(new DonatorMap());
 
-            modelBuilder.Configurations.Add(new DonatorTypeMap());
-            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            modelbuilder.Configurations.Add(new DonatorTypeMap());
+            modelbuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelbuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
             base.OnModelCreating(modelbuilder);
         }
